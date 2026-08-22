@@ -1,7 +1,7 @@
 package main
 
 import (
-	"tp0/ejercicios"
+	"TP0_LOIACONO/ejercicios"
 )
 
 func main() {

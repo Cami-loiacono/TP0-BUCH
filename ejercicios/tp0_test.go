@@ -3,7 +3,7 @@ package ejercicios_test
 import (
 	"strings"
 	"testing"
-	"tp0/ejercicios"
+	"TP0_LOIACONO/ejercicios"
 
 	"github.com/stretchr/testify/require"
 )

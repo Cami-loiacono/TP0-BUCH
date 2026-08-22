@@ -1,4 +1,4 @@
-module tp0
+module TP0_LOIACONO
 
 go 1.27.0
 
