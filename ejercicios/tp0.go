@@ -32,8 +32,8 @@ func Maximo(vector []int) int {
 func Comparar(vector1 []int, vector2 []int) int {
 	primerMayor, primerMenor := false, false
 
-	for i:=0; i < len(vector1); i++ {
-		for j:=0; j < len(vector2); j++ {
+	for i := 0; i < len(vector1); i++ {
+		for j := 0; j < len(vector2); j++ {
 			if vector1[i] != vector2[j] {
 				if vector1[i] < vector2[j] {
 					primerMenor = true
@@ -43,9 +43,9 @@ func Comparar(vector1 []int, vector2 []int) int {
 			}
 		}
 	}
-	if primerMayor{
+	if primerMayor {
 		return -1
-	} else if primerMenor{
+	} else if primerMenor {
 		return 1
 	}
 	return 0
@@ -64,7 +64,7 @@ func Seleccion(vector []int) {
 // Esta función debe implementarse de forma RECURSIVA. Se puede usar una función auxiliar (que sea
 // la recursiva).
 func Suma(vector []int) int {
-	if len(vector)!=VALOR_NULO {
+	if len(vector) != VALOR_NULO {
 		numeroActual := vector[0]
 		sliceSiguiente := vector[1:]
 		return numeroActual + Suma(sliceSiguiente)
@@ -75,10 +75,10 @@ func Suma(vector []int) int {
 // EsCadenaCapicua devuelve si la cadena es un palíndromo. Es decir, si se lee igual al derecho que al revés.
 // Esta función debe implementarse de forma RECURSIVA. Se puede usar una función auxiliar (que sea
 // la recursiva).
-func EsPalindromo(primerIndice int, ultimoIndice int, cadena string ) bool {
+func EsPalindromo(primerIndice int, ultimoIndice int, cadena string) bool {
 	esCadenaPalindromo := false
 	if primerIndice >= ultimoIndice {
-		esCadenaPalindromo = true	
+		esCadenaPalindromo = true
 	} else if primerIndice == VALOR_NULO && ultimoIndice == VALOR_NULO {
 		esCadenaPalindromo = true
 	} else {
