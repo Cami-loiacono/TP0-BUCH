@@ -68,12 +68,12 @@ func Seleccion(vector []int) {
 // Esta función debe implementarse de forma RECURSIVA. Se puede usar una función auxiliar (que sea
 // la recursiva).
 func Suma(vector []int) int {
-	if len(vector) != VALOR_NULO {
-		numeroActual := vector[0]
-		sliceSiguiente := vector[1:]
-		return numeroActual + Suma(sliceSiguiente)
+	if len(vector) == VALOR_NULO {
+		return 0
 	}
-	return 0
+	numeroActual := vector[0]
+	sliceSiguiente := vector[1:]
+	return numeroActual + Suma(sliceSiguiente)
 }
 
 // EsCadenaCapicua devuelve si la cadena es un palíndromo. Es decir, si se lee igual al derecho que al revés.
