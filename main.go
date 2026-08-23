@@ -1,9 +1,9 @@
 package main
 
 import (
-	"TP0_LOIACONO/ejercicios"
+	"tp0/ejercicios"
 )
 
 func main() {
-	ejercicios.EJEJEMPLO1()
-}	
+	_ = ejercicios.VALOR_NULO
+}
