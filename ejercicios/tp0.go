@@ -32,20 +32,24 @@ func Maximo(vector []int) int {
 func Comparar(vector1 []int, vector2 []int) int {
 	primerMayor, primerMenor := false, false
 
-	for i := 0; i < len(vector1); i++ {
-		for j := 0; j < len(vector2); j++ {
-			if vector1[i] != vector2[j] {
-				if vector1[i] < vector2[j] {
-					primerMenor = true
-				} else if vector1[i] > vector2[j] {
-					primerMayor = true
-				}
+	for i := 0; i < len(vector1) && i < len(vector2) && !primerMayor && !primerMenor; i++ {
+		if vector1[i] != vector2[i] {
+			if vector1[i] < vector2[i] {
+				primerMenor = true
+			} else if vector1[i] > vector2[i] {
+				primerMayor = true
 			}
 		}
 	}
-	if primerMayor {
+	if primerMenor {
 		return -1
-	} else if primerMenor {
+	} else if primerMayor {
+		return 1
+	}
+	
+	if len(vector1) < len(vector2) {
+		return -1
+	} else if len(vector1) > len(vector2) {
 		return 1
 	}
 	return 0
@@ -78,8 +82,6 @@ func Suma(vector []int) int {
 func EsPalindromo(primerIndice int, ultimoIndice int, cadena string) bool {
 	esCadenaPalindromo := false
 	if primerIndice >= ultimoIndice {
-		esCadenaPalindromo = true
-	} else if primerIndice == VALOR_NULO && ultimoIndice == VALOR_NULO {
 		esCadenaPalindromo = true
 	} else {
 		if cadena[primerIndice] == cadena[ultimoIndice] {
