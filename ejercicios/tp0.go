@@ -1,8 +1,11 @@
 package ejercicios
 
 const (
-	VALOR_INVALIDO = -1
-	VALOR_NULO     = 0
+	VALOR_INVALIDO   = -1
+	VALOR_NULO       = 0
+	PRIMER_MENOR     = -1
+	PRIMER_MAYOR     = 1
+	ARREGLOS_IGUALES = 0
 )
 
 // Swap intercambia dos valores enteros.
@@ -22,7 +25,7 @@ func Maximo(vector []int) int {
 		}
 		return posicionMaximoElemento
 	}
-	return -1
+	return VALOR_INVALIDO
 }
 
 // Comparar compara dos arreglos de longitud especificada.
@@ -42,17 +45,17 @@ func Comparar(vector1 []int, vector2 []int) int {
 		}
 	}
 	if primerMenor {
-		return -1
+		return PRIMER_MENOR
 	} else if primerMayor {
-		return 1
+		return PRIMER_MAYOR
 	}
-	
+
 	if len(vector1) < len(vector2) {
-		return -1
+		return PRIMER_MENOR
 	} else if len(vector1) > len(vector2) {
-		return 1
+		return PRIMER_MAYOR
 	}
-	return 0
+	return ARREGLOS_IGUALES
 }
 
 // Seleccion ordena el arreglo recibido mediante el algoritmo de selección.
@@ -91,6 +94,5 @@ func EsPalindromo(primerIndice int, ultimoIndice int, cadena string) bool {
 	return esCadenaPalindromo
 }
 func EsCadenaCapicua(cadena string) bool {
-	EsCapicua := EsPalindromo(VALOR_NULO, len(cadena)-1, cadena)
-	return EsCapicua
+	return EsPalindromo(VALOR_NULO, len(cadena)-1, cadena)
 }
